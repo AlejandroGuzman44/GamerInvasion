@@ -1,8 +1,16 @@
 import React from "react";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { Cart } from "./Cart";
+import { Store } from "./Store";
+import { Rutas } from "./Rutas";
 
 export const Navbar = () => {
   return (
-    <>
+    <div>
+
+
+
+
       <section class="header-main border-bottom">
         <div class="container">
           <div class="row align-items-center">
@@ -24,26 +32,26 @@ export const Navbar = () => {
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <NavLink class="dropdown-item" to="/OptionSelected" >
                       Action
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <NavLink class="dropdown-item" to="/OptionSelected">
                       Another action
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <NavLink class="dropdown-item" to="/OptionSelected">
                       Something else here
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
             </div>
-            <a href="./store.html" class="btn btn-outline-primary">
+            <NavLink class="btn btn-outline-primary" to="/store">
               Tienda
-            </a>
+            </NavLink>
             <div class="col-lg  col-md-6 col-sm-12 col">
               <form action="#" class="search">
                 <div class="input-group w-100">
@@ -55,34 +63,39 @@ export const Navbar = () => {
                   />
 
                   <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
+                    <NavLink class="btn btn-primary" type="submit" to="/store">
                       <i class="fa fa-search"></i>
-                    </button>
+                    </NavLink>
                   </div>
                 </div>
               </form>
             </div>
             <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
               <div class="d-flex justify-content-end mb-3 mb-lg-0">
-                <div class="widget-header">
-                  <small class="title text-muted">Bienvenido visitante!</small>
-                  <div>
-                    <a href="./signin.html">Login</a>{" "}
-                    <span class="dark-transp"> | </span>
-                    <a href="./register.html"> Registrar</a>
-                  </div>
-                </div>
-                <a href="./cart.html" class="widget-header pl-3 ml-3">
+                {/* <div class="widget-header">
+                    <small class="title text-muted">Bienvenido visitante!</small>
+                   <div>
+                      <NavLink href="./signin.html">Login</NavLink>{" "}
+                      <span class="dark-transp"> | </span>
+                      <NavLink href="./register.html"> Registrar</NavLink>
+                    </div> 
+                  </div> */}
+                <NavLink class="widget-header pl-3 ml-3" to="/carrito">
                   <div class="icon icon-sm rounded-circle border">
                     <i class="fa fa-shopping-cart"></i>
                   </div>
                   <span class="badge badge-pill badge-danger notify">0</span>
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+
+    </div>
+
+
+
   );
 };
