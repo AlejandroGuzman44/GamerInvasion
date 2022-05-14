@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const Checkout = () => {
-    return (
-        <div>ME QUIERO MORIR !!!</div>
-    )
-}
+  return <div>Factura</div>;
+};

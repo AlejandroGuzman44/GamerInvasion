@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export const Landingpage = () => {
   return (
-    <>Pagina de inicio</>
-  )
-}
+    <>
+      <h1>Pagina de inicio</h1>
+    </>
+  );
+};

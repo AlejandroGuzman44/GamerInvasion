@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'EvilEmpire';
+  src: local('EvilEmpire'), url(./fonts/EvilEmpire.ttf) format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

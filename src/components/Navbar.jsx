@@ -1,101 +1,95 @@
 import React from "react";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import { Cart } from "./Cart";
-import { Store } from "./Store";
-import { Rutas } from "./Rutas";
+import { NavLink } from "react-router-dom";
+import {
+  Container,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  Offcanvas,
+  FormControl,
+  Button,
+} from "react-bootstrap";
+import "./NavBar.css";
 
-export const Navbar = () => {
+export const NavBar = () => {
   return (
-    <div>
-
-
-
-
-      <section class="header-main border-bottom">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-2 col-md-3 col-6">
-              <a href="./" class="brand-wrap">
-                <img class="logo" src="./images/logo01.png" />
-              </a>
-            </div>
-            <div class="col-lg col-sm col-md col-6 flex-grow-0">
-              <div class="dropdown">
-                <button
-                  class="btn btn-warning dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li>
-                    <NavLink class="dropdown-item" to="/OptionSelected" >
-                      Action
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink class="dropdown-item" to="/OptionSelected">
-                      Another action
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink class="dropdown-item" to="/OptionSelected">
-                      Something else here
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <NavLink class="btn btn-outline-primary" to="/store">
-              Tienda
+    <>
+      <Navbar
+        key="xl"
+        bg="dark-purple"
+        variant="dark"
+        expand="xl"
+        className="mb-3"
+      >
+        <Container className="navbar-container" fluid>
+          <Navbar.Brand>
+            <NavLink to="/pagina-principal" className="nav-text">
+              GamerInvasion
             </NavLink>
-            <div class="col-lg  col-md-6 col-sm-12 col">
-              <form action="#" class="search">
-                <div class="input-group w-100">
-                  <input
-                    type="text"
-                    class="form-control"
-                    // style="width:60%;"
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xl`} />
+          <Navbar.Offcanvas
+            id={`offcanvasNavbar-expand-xl`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-xl`}
+            placement="end"
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title
+                id={`offcanvasNavbarLabel-expand-xl`}
+                className="nav-title"
+              >
+                GamerInvasion
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className="justify-content-center flex-grow-1 pe-3">
+                <Nav.Link>
+                  <NavLink to="/store" className="nav-text">
+                    Tienda
+                  </NavLink>
+                </Nav.Link>
+                <Nav.Link>
+                  <NavLink to="/quienes-somos" className="nav-text">
+                    ¿Quiénes somos?
+                  </NavLink>
+                </Nav.Link>
+                <NavDropdown
+                  title="Cateogorías"
+                  className="nav-text"
+                  id={`offcanvasNavbarDropdown-expand-xl`}
+                >
+                  <NavDropdown.Item href="#action3">
+                    Video Juegos
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">
+                    Perífericos
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action5">
+                    Computadoras
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action5">Consolas</NavDropdown.Item>
+                </NavDropdown>
+                <Form className="d-flex mt-2">
+                  <FormControl
+                    type="search"
                     placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
                   />
+                  <Button variant="outline-yellow">Buscar</Button>
+                </Form>
+              </Nav>
 
-                  <div class="input-group-append">
-                    <NavLink class="btn btn-primary" type="submit" to="/store">
-                      <i class="fa fa-search"></i>
-                    </NavLink>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
-              <div class="d-flex justify-content-end mb-3 mb-lg-0">
-                {/* <div class="widget-header">
-                    <small class="title text-muted">Bienvenido visitante!</small>
-                   <div>
-                      <NavLink href="./signin.html">Login</NavLink>{" "}
-                      <span class="dark-transp"> | </span>
-                      <NavLink href="./register.html"> Registrar</NavLink>
-                    </div> 
-                  </div> */}
-                <NavLink class="widget-header pl-3 ml-3" to="/carrito">
-                  <div class="icon icon-sm rounded-circle border">
-                    <i class="fa fa-shopping-cart"></i>
-                  </div>
-                  <span class="badge badge-pill badge-danger notify">0</span>
+              <Nav.Link>
+                <NavLink to="/store" className="nav-text justify-content-end">
+                  Carrito
                 </NavLink>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-    </div>
-
-
-
+              </Nav.Link>
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
+    </>
   );
 };
