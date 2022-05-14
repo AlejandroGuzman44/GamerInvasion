@@ -11,6 +11,8 @@ import {
   Button,
 } from "react-bootstrap";
 import "./NavBar.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 export const NavBar = () => {
   return (
@@ -46,7 +48,7 @@ export const NavBar = () => {
               <Nav className="justify-content-center flex-grow-1 pe-3">
                 <Nav.Link>
                   <NavLink to="/store" className="nav-text">
-                    Tienda
+                    Tienda<FontAwesomeIcon icon={faCoffee} />
                   </NavLink>
                 </Nav.Link>
                 <Nav.Link>
