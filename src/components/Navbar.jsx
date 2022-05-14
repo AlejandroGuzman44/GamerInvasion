@@ -14,6 +14,8 @@ import "./NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faAngry } from '@fortawesome/free-regular-svg-icons';
+import { Search } from './Search';
+
 export const NavBar = () => {
   return (
     <>
@@ -72,15 +74,7 @@ export const NavBar = () => {
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action5">Consolas</NavDropdown.Item>
                 </NavDropdown>
-                <Form className="d-flex mt-2">
-                  <FormControl
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-yellow">Buscar</Button>
-                </Form>
+                <Search/>
               </Nav>
 
               <Nav.Link>
