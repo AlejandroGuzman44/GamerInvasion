@@ -1,7 +1,7 @@
 import "./App.css";
 import './App.scss';
-import { NavBar } from "./components/NavBar";
-import { Rutas } from "./components/Rutas";
+import { NavBar } from "./components/NavBar/NavBar";
+import { Rutas } from "./Rutas/Rutas";
 
 function App() {
   return (
