@@ -13,7 +13,7 @@ import {
 import "./NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
+import { faAngry } from '@fortawesome/free-regular-svg-icons';
 export const NavBar = () => {
   return (
     <>
@@ -53,7 +53,7 @@ export const NavBar = () => {
                 </Nav.Link>
                 <Nav.Link>
                   <NavLink to="/quienes-somos" className="nav-text">
-                    ¿Quiénes somos?
+                    ¿Quiénes somos?<FontAwesomeIcon icon={faAngry} />
                   </NavLink>
                 </Nav.Link>
                 <NavDropdown
