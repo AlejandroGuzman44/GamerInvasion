@@ -84,7 +84,7 @@ export const NavBar = () => {
               </Nav>
 
               <Nav.Link>
-                <NavLink to="/store" className="nav-text justify-content-end">
+                <NavLink to="/carrito" className="nav-text justify-content-end">
                   Carrito
                 </NavLink>
               </Nav.Link>
