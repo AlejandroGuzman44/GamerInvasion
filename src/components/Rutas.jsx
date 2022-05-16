@@ -6,6 +6,7 @@ import { Checkout } from "./Checkout";
 import { Landingpage } from "./Landingpage";
 import { Product_detail as ProductoDetail } from "./Product_detail";
 import { AboutUs } from "./AboutUs";
+import { CartMax } from "./CartMax";
 
 export const Rutas = () => {
   return (
@@ -15,7 +16,7 @@ export const Rutas = () => {
 
         <Route path="/pagina_principal" element={<Landingpage />} />
 
-        <Route path="/carrito" element={<Cart />} />
+        <Route path="/carrito" element={<CartMax />} />
 
         <Route path="/pedido" element={<Checkout />} />
 

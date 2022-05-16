@@ -53,11 +53,12 @@ export const ContextoCarritoProvider = ({ children }) => {
                 productoCarrito.filter(productoEnCarrito => productoEnCarrito.id !== producto.id)
             );
         } else {
-            setproductoCarrito((productoEnCarrito) => {
-                if (productoEnCarrito.id === producto.id) {
-                    return { ...enCarrito, amount: enCarrito.amount - 1 }
-                } else return productoEnCarrito
-            });
+            setproductoCarrito(
+                productoCarrito.map((productoEnCarrito) => {
+                    if (productoEnCarrito.id === producto.id) {
+                        return { ...enCarrito, amount: enCarrito.amount - 1 }
+                    } else return productoEnCarrito
+                }));
         }
     };
 

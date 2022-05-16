@@ -15,7 +15,10 @@ export const Productos = () => {
 
                 <div key={index} className={styles.productos}>
 
-                    <img src={producto.img} alt={producto.nombre} />
+                    <div className={styles.contenedor_imagen}>
+                        <img src={producto.img} alt={producto.nombre} />
+                    </div>
+
                     <div>
                         <p>
                             {producto.nombre} - {producto.precio}$

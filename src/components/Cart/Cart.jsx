@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import styles from './styles.module.scss'
+import { ProductoCarrito } from "../ProductoCarrito/ProductoCarrito";
+import { NavLink } from 'react-router-dom'
 
 export const Cart = () => {
 
@@ -27,7 +29,7 @@ export const Cart = () => {
 
     <div className={styles.contenedor_carrito}>
 
-      <div className={styles.btn_contenedor_carrito}>
+      <div onClick={() => { setCarritoAbierto(!carritoAbierto) }} className={styles.btn_contenedor_carrito}>
 
         <div className={styles.btn_carrito}>
           {!carritoAbierto ? (
@@ -66,9 +68,43 @@ export const Cart = () => {
           )}
         </div>
         {!carritoAbierto && <div className={styles.numero_productos}>{cantidadProductos}</div>}
+
       </div>
 
-    </div>
+
+      {productoCarrito && carritoAbierto && (
+        <div className={styles.carrito}>
+
+
+          <h2>Tu carrito</h2>
+
+          {productoCarrito.length === 0 ? (
+            <p className={styles.carritoVacio}>Tu carrito esta vacio</p>
+          ) : (
+            <div className={styles.contenedorProductos}>
+
+              {productoCarrito.map((item, i) => (
+                <ProductoCarrito key={i} item={item} />
+              ))}
+
+            </div>
+          )}
+
+          <h2 className={styles.total}>Total : ${total}</h2>
+          <NavLink className={styles.irCarrito} to='/carrito' onClick={() => {
+            setCarritoAbierto(false)
+          }}>Ir al carrito</NavLink>
+
+
+        </div>
+
+
+      )
+      }
+
+
+
+    </div >
 
   );
 };

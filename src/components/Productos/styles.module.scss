@@ -6,6 +6,8 @@
     grid-column-gap: 75px;
     justify-content: center;
     justify-items: center;
+    margin-top: 30px;
+    
 
 
     .productos{
@@ -17,7 +19,7 @@
         justify-content: center;
         gap: 10px;
 
-        
+
         img{
             width: 200px;
             height: 150px;
@@ -30,14 +32,17 @@
         }
 
         button{
-            border: none;
+            border: 3px solid white;
             border-radius: 5px;
             padding: 5px , 10px;
             cursor: pointer;
+            background: rgb(131, 249, 255) ;
         }
 
         button:hover{
-            background: rgb(239, 211, 0);
+            border: 3px solid black;
+            background: rgb(43, 239, 250);
+            
         }
 
     }

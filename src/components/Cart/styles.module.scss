@@ -3,12 +3,12 @@
     height: 50px;
     display: flex;
     justify-content: flex-end;
-    font-family: Roboto;
+    font-family: EvilEmpire;
   
     .btn_contenedor_carrito {
       position: absolute;
       margin-top: 10px;
-      margin-right: 20px;
+      margin-right: 40px;
       cursor: pointer;
       z-index: 2;
   
@@ -18,7 +18,7 @@
       }
   
       .btn_carrito {
-        background-color: #222222;
+        background-color: rgba(23,2,33,255);
         width: 60px;
         height: 60px;
         display: flex;
@@ -41,5 +41,65 @@
         align-items: center;
         justify-content: center;
       }
+
     }
+
+    .carrito {
+      position: absolute;
+      margin-top: 10px;
+      margin-right: 20px;
+      border-radius: 30px;
+      width: 400px;
+      background-color: rgba(23,2,33,255);
+      color: white;
+  
+      h2 {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 35px;
+      }
+  
+      .carritoVacio {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+  
+      .total {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 15px;
+        padding-bottom: 35px;
+      }
+
+      .irCarrito{
+        text-align:center;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        margin-left: 150px;
+        cursor: pointer;
+        font-size: 20px;
+        
+      }
+
+      .contenedorProductos{
+        max-height: 200px;
+        overflow-y: scroll;
+        margin-top: 5px;
+      }
+}}
+
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
 }
