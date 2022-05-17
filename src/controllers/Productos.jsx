@@ -12,7 +12,7 @@ import {db} from "../firebase/firebaseconfig";
 const coleccion = "Productos";
 const rutaFoto = "productos-imagenes";
 
-/* CREAR UNA CATEGORIA SIN IMAGEN */
+/* CREAR UN PRODUCTO SIN IMAGEN */
 export const productoCrearSF = async(
     formProducto,
     categoriaSelect,
@@ -46,7 +46,7 @@ export const productoCrearCF = (
     const promises = fotosVista.map((file) => {
         const fechaAhora = Date.now();
         const rutaCompleta =  file.name + fechaAhora + file.lastModified + file.size;
-        const storage = getStorage();
+        const storage = getStorage();   
         const imageRef = ref(storage, `${rutaFoto}/${rutaCompleta}`);
         return uploadBytes(imageRef,file)
             .then((snapshot) => {
@@ -83,4 +83,25 @@ export const productoUno = async (idProducto) =>{
     }else{
       console.log("No existe el documento");
     }
+};
+
+/* EDITAR UN PRODUCTO SIN IMAGEN */
+export const productoEditarSF = async(
+    formProducto,
+    categoriaSelect,
+    etiquetaFinal,
+    fotosAntiguas
+) => {
+    const productoRef = doc(db, coleccion, formProducto.idProducto)
+    await updateDoc(productoRef, {
+            Nombre: formProducto.nombre,
+            Marca: formProducto.marca,
+            UrlProducto: formProducto.urlProducto,
+            Descripcion: formProducto.descripcion,
+            Precio: formProducto.precio,
+            Cantidad: formProducto.cantidad,
+            Categoria: categoriaSelect,
+            Etiqueta: etiquetaFinal,
+            ImagenesUrl: fotosAntiguas,
+        });
 };

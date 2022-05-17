@@ -8,9 +8,7 @@ import {
 	updateDoc,
 	addDoc,
 } from "firebase/firestore";
-import TablaEtiqueta from "../../Tablas/TablaEtiqueta";
 import GenerarUrl from "../../../Utilidades/GenerarUrl";
-// import "./Etiquetas.css";
 import { Container, Table, Form, Button } from "react-bootstrap";
 
 const initEtiqueta = {

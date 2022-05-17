@@ -11,6 +11,7 @@ import Etiquetas from './Admin/Etiquetas/Etiquetas'
 import Categorias from './Admin/Categorias/Categorias';
 import Productos from "./Admin/Productos/Productos";
 import CrearProductos from "./Admin/Productos/CrearProductos";
+import EditarProductos from "./Admin/Productos/EditarProductos";
 
 export const Rutas = () => {
   return (
@@ -30,15 +31,17 @@ export const Rutas = () => {
 
         <Route path="OptionSelected" element={<Store />} />
         
-        <Route path="Administrador" element={<AdminHome />} />
+        <Route path="/administrador" element={<AdminHome />} />
 
-        <Route path="Administrador/Etiquetas" element={<Etiquetas />} />
+        <Route path="/administrador/etiquetas" element={<Etiquetas />} />
 
-        <Route path="Administrador/Categorias" element={<Categorias />} />
+        <Route path="/administrador/categorias" element={<Categorias />} />
 
-        <Route path="Administrador/Productos" element={<Productos />} />
+        <Route path="/administrador/productos" element={<Productos />} />
 
-        <Route path="Administrador/Productos-Crear" element={<CrearProductos />} />
+        <Route path="/administrador/productos-crear" element={<CrearProductos />} />
+
+        <Route path="/administrador/productos-editar/:idProductoUrl" element={<EditarProductos />} />
 
       </Routes>
     </>

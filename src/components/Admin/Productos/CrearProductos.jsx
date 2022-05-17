@@ -114,7 +114,7 @@ const CrearProductos = () => {
         e.preventDefault();
     const etiquetaFinal = escogerEtiqueta(formEtiqueta);
     productoCrearCF(formProducto, categoriaSelect, etiquetaFinal, fotosVista);
-    // history.push(`/Administrador/Productos`);
+    // history.push(`/administrador/productos`);
     };
                           
     return (
