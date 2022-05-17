@@ -1,16 +1,16 @@
 import React,{useState, useEffect}from "react";
-import {useHistory}from "react-router-dom";
+//import {useHistory} from "react-router-dom";
 import {categoriasTodas} from "../../../controllers/Categorias";
-import {productoCrearCF}from "../../../controllers/Productos";
-import{etiquetaTodas}from "../../../controllers/Etiquetas";
+import {productoCrearCF} from "../../../controllers/Productos";
+import {etiquetasTodas} from "../../../controllers/Etiquetas";
 import GenerarUrl from "../../../Utilidades/GenerarUrl"
 //import "./Productos.css";
 
 
 //ESTADO INICIAL FORMULARIO PRODUCTO 
-const initFormCategoria={
+const initFormCategoria = {
     nombre: "",
-    urlProducto:"",
+    urlProducto: "",
     marca: "",
     precio: 0,
     cantidad: 0,
@@ -18,9 +18,9 @@ const initFormCategoria={
 };
 
 const CrearProductos = () => {
-  const history = useHistory();
+  //const history = useHistory();
   const [categorias, setCategorias] = useState([]);
-  const [categoriaSelect, setCategoriaSelect]=useState(
+  const [categoriaSelect, setCategoriaSelect] = useState(
     "Seleccione la categoria"
   );
   const [estadoEtiqueta, setEstadoEtiqueta] = useState(false);
@@ -34,10 +34,10 @@ const CrearProductos = () => {
     (async () => {
         const categoriaDB = await categoriasTodas ();
         setCategorias(categoriaDB);
-        const etiquetaDB = await etiquetaTodas ();
-        setEtiquetas (etiquetaDB);
+        const etiquetaDB = await etiquetasTodas ();
+        setEtiquetas(etiquetaDB);
     })();
-    }, []);
+  }, []);
 
     const cambiarDatos = (e) => {
         const{name, value}=e.target;
@@ -47,17 +47,17 @@ const CrearProductos = () => {
         });
     };
 
-    const cambiarFotos=(e) => {
+    const cambiarFotos = (e) => {
         if (e.target.files){
-            const fotosArray = Array.from(e.target.fles).map((file) =>
-            URL.createobjectURL (flle)
+            const fotosArray = Array.from(e.target.files).map((file) =>
+                URL.createObjectURL (file)
             );
             const fotosArray2 = Array.from(e.target.files);
 
-            setFotos ((prevImages) => prevImages.concat (fotosArray));
-            Array.from(e.target.flles).map((flle) => URL.revokeobjectURL(flle));
+            setFotos((prevImages) => prevImages.concat(fotosArray));
+            Array.from(e.target.files).map((file) => URL.revokeObjectURL(file));
 
-            setFotosVista((previmages) => prevImages.concat( fotosArray2));
+            setFotosVista((prevImages) => prevImages.concat( fotosArray2));
         }
     };
 
@@ -66,7 +66,7 @@ const CrearProductos = () => {
     };
 
     const abrirEtiqueta = () => {
-        setEstadoEtiqueta(estadoEtiqueta);
+        setEstadoEtiqueta(!estadoEtiqueta);
     };
 
     const cambiarEtiqueta = (event) => {
@@ -77,18 +77,18 @@ const CrearProductos = () => {
         };
     
     function escogerEtiqueta (etiquetasSeleccionadas){
-        const etiquetaArray=Object.entries (etiquetasSeleccionadas);
-        const etiquetafiltrada = etiquetaArray.filter (function ([key, value]){
+        const etiquetaArray = Object.entries(etiquetasSeleccionadas);
+        const etiquetaFiltrada = etiquetaArray.filter(function ([key, value]){
             return value === true;
         });
-        const etiquetasEnviar = Object.keys (Object.fromEntries(etiquetaF1ltrada));
+        const etiquetasEnviar = Object.keys(Object.fromEntries(etiquetaFiltrada));
         return etiquetasEnviar;
     }
 
     function onBlur (){
         setFormProducto({
            ...formProducto,
-           urlProductd: GenerarUrl(formProducto.nombre),
+           urlProducto: GenerarUrl(formProducto.nombre),
         });
     }
     
@@ -106,7 +106,7 @@ const CrearProductos = () => {
                 nuevaFotoArray2.findIndex( (item) => item.id === index),
                 1
             );
-            setFotosVista (nuevaFotoArray2);
+            setFotosVista(nuevaFotoArray2);
         }
     };
 
@@ -114,7 +114,7 @@ const CrearProductos = () => {
         e.preventDefault();
     const etiquetaFinal = escogerEtiqueta(formEtiqueta);
     productoCrearCF(formProducto, categoriaSelect, etiquetaFinal, fotosVista);
-    history.push(`/Administrador/Productos`);
+    // history.push(`/Administrador/Productos`);
     };
                           
     return (
@@ -127,20 +127,20 @@ const CrearProductos = () => {
                     required
                     name = "nombre"
                     placeholder = "Nambre del producto"
-                    value={formProducto.nombre}
+                    value = {formProducto.nombre}
                     onChange = {cambiarDatos}
                     onBlur = {onBlur}
                 />
                 <h4>URL:</h4>
                 <input
-                    type = "text"
+                    type="text"
                     disabled
                     required
                     defaultValue = {GenerarUrl(formProducto.nombre)}
-                    placeholder="URL del producto"
+                    placeholder = "URL del producto"
                 />
                 <h4>Categoria:</h4>
-                <select onchange={cambiarCategoria} value={categoriaSelect}>
+                <select onChange={cambiarCategoria} value={categoriaSelect}>
                     <option disabled value={"Seleccione la categoria"}>
                         Seleccione la categoria
                     </option>
@@ -152,10 +152,10 @@ const CrearProductos = () => {
                 </select>
                 <h4>Etiqueta:</h4>
                 <div>
-                    <div className ="contenedor-select" onclick={abrirEtiqueta}>
+                    <div className="contenedor-select" onClick={abrirEtiqueta}>
                         <select>
                         {etiquetas?.length === 0 ? (
-                            <option defaultvalue={false}>No tiene etiquetas</option>
+                            <option defaultValue={false}>No tiene etiquetas</option>
                         ) : (
                             <option>Selecciona una etiqueta</option>
                         )}
@@ -166,17 +166,17 @@ const CrearProductos = () => {
                         className="contenedor-check"
                         style= {{
                             display:
-                                estadoEtiqueta && etiquetas.length !== 0 ? "block":"none",
+                                estadoEtiqueta && etiquetas.length !== 0 ? "block" : "none",
                         }}
                     >
                         {etiquetas.map((etiqueta) => (
-                            <label key = {etiqueta.IdEtiqueta}>
+                            <label key={etiqueta.IdEtiqueta}>
                                 {etiqueta.Nombre}
                                 <input
                                     type="checkbox"
-                                    name= {etiqueta.Nombre}
-                                    checked = {formEtiqueta [etiqueta.IdEtiqueta]}
-                                    onchange={cambiarEtiqueta}
+                                    name={etiqueta.Nombre}
+                                    checked={formEtiqueta[etiqueta.IdEtiqueta]}
+                                    onChange={cambiarEtiqueta}
                                 />  
                             </label>
                         ))}
@@ -212,7 +212,7 @@ const CrearProductos = () => {
                     min={1}
                     step={1}
                     value={formProducto.cantidad}
-                    on Change={cambiarDatos}
+                    onChange={cambiarDatos}
                 />
                 <h4>Descripción:</h4>
                 <textarea
@@ -222,15 +222,15 @@ const CrearProductos = () => {
                     rows="8"
                     placeholder="Describe el producto"
                     value={formProducto.descripcion}
-                    on Change={cambiarDatos}
+                    onChange={cambiarDatos}
                 ></textarea>
                 <h4> Imagenes: </h4>
                 <input
-                    type="flle"
+                    type="file"
                     id="file"
                     required
                     multiple
-                    on Change={cambiarFotos}
+                    onChange={cambiarFotos}
                 />
                 <div className="contenedor-imagenes-categorias">
                     <div className="contenedor-card-categorias">
@@ -238,7 +238,7 @@ const CrearProductos = () => {
                             <div key={index}>
                                 <img src={photo} alt=""/>
                                 <div
-                                onclick={() => eliminarFoto(index)}
+                                onClick={() => eliminarFoto(index)}
                                 className={"boton-eliminar"}
                             >
                                 Eliminar

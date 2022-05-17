@@ -9,6 +9,8 @@ import { AboutUs } from "./AboutUs";
 import AdminHome from './Admin/AdminHome'
 import Etiquetas from './Admin/Etiquetas/Etiquetas'
 import Categorias from './Admin/Categorias/Categorias';
+import Productos from "./Admin/Productos/Productos";
+import CrearProductos from "./Admin/Productos/CrearProductos";
 
 export const Rutas = () => {
   return (
@@ -33,6 +35,10 @@ export const Rutas = () => {
         <Route path="Administrador/Etiquetas" element={<Etiquetas />} />
 
         <Route path="Administrador/Categorias" element={<Categorias />} />
+
+        <Route path="Administrador/Productos" element={<Productos />} />
+
+        <Route path="Administrador/Productos-Crear" element={<CrearProductos />} />
 
       </Routes>
     </>

@@ -84,9 +84,6 @@ const Etiquetas = () => {
 	};
 
 	const crearEtiqueta = async (e) => {
-		console.log(formEtiqueta.nombre);
-		console.log(formEtiqueta.urlEtiqueta);
-		console.log(formEtiqueta.descripcion);
 		e.preventDefault();
 		try {
 			await addDoc(collection(db, "Etiquetas"), {
@@ -98,7 +95,6 @@ const Etiquetas = () => {
 			console.error("Error al agregar etiqueta ", e);
 		}
 		setFormEtiqueta(initEtiqueta);
-		console.log("REGISTRO EXITOSO");
 	};
 
 	return (
