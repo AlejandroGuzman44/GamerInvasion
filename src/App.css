@@ -13,6 +13,18 @@
   }
 }
 
+::-webkit-scrollbar
+{
+  width: 15px;
+  background-color: rgba(23,2,33,255);
+}
+
+::-webkit-scrollbar-thumb 
+{
+  background-image: linear-gradient(rgb(131, 249, 255),rgba(191,4,229,255)) ;
+  border-radius: 25px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +48,5 @@
     transform: rotate(360deg);
   }
 }
+
+

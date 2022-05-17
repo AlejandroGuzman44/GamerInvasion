@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import {
   Container,
@@ -12,6 +12,8 @@ import {
   Button,
 } from "react-bootstrap";
 
+import logo from "../../images/logo.png"
+
 export const NavBar = () => {
   return (
     <>
@@ -20,13 +22,11 @@ export const NavBar = () => {
         bg="dark-purple"
         variant="dark"
         expand="xl"
-        className="mb-3"
+        className="py-0"
       >
         <Container className="navbar-container align-items-center" fluid>
-          <Navbar.Brand>
-            <NavLink to="/pagina-principal" className="nav-text">
-              GamerInvasion
-            </NavLink>
+          <Navbar.Brand as={Link} to="/pagina-principal" className="nav-text">
+            <img alt="logo" src={logo}/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xl`} />
           <Navbar.Offcanvas
@@ -40,15 +40,8 @@ export const NavBar = () => {
             ></Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="align-items-center justify-content-center flex-grow-1 pe-3">
-                <Nav.Link>
-                  <NavLink to="/store" className="nav-text">
-                    Tienda
-                  </NavLink>
-                </Nav.Link>
-                <Nav.Link>
-                  <NavLink to="/quienes-somos" className="nav-text nav-text">
-                    ¿Quiénes somos?
-                  </NavLink>
+                <Nav.Link as={Link} to="/store" className="nav-text">
+                  Tienda
                 </Nav.Link>
                 <NavDropdown
                   title="Categorías"
@@ -67,17 +60,16 @@ export const NavBar = () => {
                     className="me-2 ms-3 search-bar"
                     aria-label="Search"
                   />
-                  <Button variant="outline-yellow">Buscar</Button>
+                  <Button className="nav-btn" variant="outline-cyan">Buscar</Button>
                 </Form>
               </Nav>
               <Nav className="align-items-center">
-                <Nav.Link>
-                  <NavLink
-                    to="/carrito"
-                    className="nav-text justify-content-end"
-                  >
-                    Carrito
-                  </NavLink>
+              <Nav.Link
+                  as={Link}
+                  to="/quienes-somos"
+                  className="nav-text justify-content-end"
+                >
+                  ¿Quiénes somos?
                 </Nav.Link>
               </Nav>
             </Offcanvas.Body>

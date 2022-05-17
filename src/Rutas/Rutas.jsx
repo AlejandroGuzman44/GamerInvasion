@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Cart } from "../components/Cart";
 import { Store } from "../components/Store";
 import { Checkout } from "../components/Checkout";
-import { Landingpage } from "../components/Landingpage";
+import { Landingpage } from "../components/Landingpage/Landingpage";
 import { Product_detail as ProductoDetail } from "../components/Product_detail";
 import { AboutUs } from "../components/AboutUs";
 

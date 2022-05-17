@@ -2,37 +2,42 @@
     text-align: center !important;
     justify-content: center !important;
     text-decoration: none !important;
-    color: rgb(239, 211, 0) !important;
+    color: rgb(131, 249, 255) !important;
     letter-spacing: 3px !important;
     margin: 7px !important;
     padding: 8px !important;
+    font-family: 'EvilEmpire';
 }
 
 .nav-link:hover{
-    border-color: rgb(239, 211, 0) !important;
+    border-color: rgb(131, 249, 255) !important;
     border-radius: 5px !important;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgb(255, 234, 0);
+    box-shadow: 2px 2px 2px rgba(17, 6, 28) inset, 0 0 5px rgb(14, 243, 168);
     outline: 0 none;
-    color:  rgb(255, 225, 0) !important;
+    color:  rgb(159, 246, 250) !important;
 }
 
 .nav-text:hover{
-    color:  rgb(223, 197, 0) !important;
+    color:  rgb(159, 246, 250) !important;
 }
 
 .offcanvas{
-    background-color: rgb(32, 0, 49) !important;
+    background-color: rgb(17, 6, 28) !important;
 }
 
-.btn:hover{
-    border-color: rgb(239, 211, 0) !important;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(255, 234, 0);
+.nav-btn{
+    font-family: 'EvilEmpire';
+}
+
+.nav-btn:hover{
+    border-color: rgb(131, 249, 255) !important;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(0, 210, 221);
     outline: 0 none;
 }
 
 .search-bar:focus{
-    border-color: rgb(239, 211, 0) !important;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(255, 234, 0);
+    border-color: rgb(76, 239, 248, 0.736) !important;
+    box-shadow: 2px 2px 2px rgba(179, 248, 252) inset, 0 0 8px rgb(0, 210, 221);
     outline: 0 none;
 }
 
@@ -45,7 +50,7 @@
 }
 
 .dropdown-item:focus{
-    background-color: rgb(248, 239, 168) !important;
+    background-color: rgba(76, 239, 248, 0.736) !important;
     color: rgb(32, 0, 49) !important;
 }
 
