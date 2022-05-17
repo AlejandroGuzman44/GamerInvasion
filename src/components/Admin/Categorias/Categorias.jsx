@@ -4,6 +4,7 @@ import{collection, onSnapshot, doc, deleteDoc, updateDoc, addDoc}from "firebase/
 //import TablaEtiqueta from "../../Tablas/TablaEtiqueta"
 import GenerarUrl from "../../../Utilidades/GenerarUrl";
 // import "./Categorias.css";
+import { Container, Table, Form, Button } from "react-bootstrap";
 
 const initCategoria = {
   nombre: "",
@@ -95,60 +96,94 @@ const Categorias = () => {
     
 
     return(
-        <>
-          <div className="contenedor-categoria">
-            <h2> Categorias</h2>
-            <form onSubmit={modoEdicion ? editarCategoria : crearCategoria}>
-              <div className="contenedor-categoria-item">
-                <h4> Nombre:</h4>
-                <input
-                  type="text"
-                  required
-                  name="nombre"
-                  value={formCategoria.nombre}
-                  onChange={cambiarDatos}
-                  placeholder="Escribe el nombre de la categoria"
-                  onBlur={onBlur}
-                />
-              </div>
-              <div className="contenedor-categoria-item">
-                <h4> URL:</h4>
-                <input
-                  type="text"
-                  disabled
-                  required
-                  defaultValue={GenerarUrl(formCategoria.nombre)}
-                  placeholder="Url de la categoria"
-                />
-              </div>
-              <div className="contenedor-categoria-item">
-                <h4> Descripción:</h4>
-                <textarea
-                name="descripcion"
-                required
-                value={formCategoria.descripcion}
-                onChange={cambiarDatos}
-                placeholder="Describe la categoria"
-                ></textarea>
-              </div>
-                <div className="contenedor-categoria-item">
-                <input style={{backgroundColor: "red"}} type="submit" value={modoEdicion ? "Editar" : "Crear"}></input>
-                {modoEdicion && <button style={{backgroundColor: "black"}} onClick={cancelarEditar}>Cancelar</button>}
-                </div>
-            </form>
-
-            {/* {categorias?.length === 0 ? (
-              <></>
-            ) : (
-              <TablaEtiqueta
-                etiquetas={categorias}
-                eliminar={eliminarCategoria}
-                activarEdicion={activarEdicion}
-                />
-            )} */}
-
-        </div>
-        </>
+      <Container>
+			<div>
+				<h2> Categorias</h2>
+				<Form onSubmit={modoEdicion ? editarCategoria : crearCategoria}>
+					<Form.Group className="mb-3">
+						<Form.Label>Nombre</Form.Label>
+						<Form.Control
+							required
+							type="text"
+							name="nombre"
+							placeholder="Ej: PC PREBUILD"
+							value={formCategoria.nombre}
+							onChange={cambiarDatos}
+              onBlur={onBlur}
+						/>
+					</Form.Group>
+					<Form.Group className="mb-3">
+						<Form.Label>Url</Form.Label>
+						<Form.Control
+							required
+							disabled
+							type="text"
+							name="url"
+							defaultValue={GenerarUrl(formCategoria.nombre)}
+							placeholder="Ej: pc-prebuild"
+						/>
+					</Form.Group>
+					<Form.Group className="mb-3">
+						<Form.Label>Descripción</Form.Label>
+						<Form.Control
+							required
+							type="text"
+							name="descripcion"
+							placeholder="Ej: Computadoras pre-ensambladas"
+							value={formCategoria.descripcion}
+							onChange={cambiarDatos}
+						/>
+					</Form.Group>
+					<Button variant="primary" type="submit">
+						{modoEdicion ? "Editar" : "Crear"}
+					</Button>
+					{modoEdicion && (
+						<Button variant="secondary" onClick={cancelarEditar}>
+							Cancelar
+						</Button>
+					)}
+				</Form>
+				{categorias?.length === 0 ? (
+					<></>
+				) : (
+					<Table striped bordered hover size="sm">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Descripcion</th>
+								<th>Url</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							{categorias.map((categoria) => (
+								<tr>
+									<td>{categoria.IdCategoria}</td>
+									<td>{categoria.Nombre}</td>
+									<td>{categoria.Descripcion}</td>
+									<td>{categoria.UrlCategoria}</td>
+									<td>
+										<Button
+											variant="outline-info"
+											onClick={() => activarEdicion(categoria)}
+										>
+											Editar
+										</Button>
+                    <Button
+											variant="outline-danger"
+											onClick={() => eliminarCategoria(categoria.IdCategoria)}
+										>
+											Eliminar
+										</Button>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</Table>
+				)}
+			</div>
+		</Container>
     );
 };
 

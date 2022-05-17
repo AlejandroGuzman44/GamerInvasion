@@ -1,15 +1,11 @@
-import { Link } from "react-router-dom";
+import { Container, Nav } from "react-bootstrap";
 
-function AdminHome () {
-    return(
-        <>
-            <h1>Admin HomePage</h1>
-            <nav ><Link to="/Administrador/Etiquetas">ETIQUETAS</Link></nav>
-            <nav ><Link to="/Administrador/Categorias">CATEGORIAS</Link></nav>
-        </>
-        
-        
-    )
+function AdminHome() {
+	return (
+		<Container>
+			<h1>Admin HomePage</h1>
+		</Container>
+	);
 }
 
 export default AdminHome;
