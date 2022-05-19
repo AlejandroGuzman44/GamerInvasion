@@ -48,7 +48,7 @@ export const Search = () => {
   const renderSuggestion = (suggestion) => {
     if (value.length >= 2) {
       return (
-        <div style={{ "list-style": "none" }}
+        <div
           className="sugerencia"
           onClick={() => selectNombre(suggestion)}
         >
