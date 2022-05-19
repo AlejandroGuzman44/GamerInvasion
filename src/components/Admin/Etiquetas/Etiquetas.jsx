@@ -71,7 +71,7 @@ const Etiquetas = () => {
 
 	const editarEtiqueta = async (e) => {
 		e.preventDefault();
-		const categoriaRef = doc(db, "Etiquetas", formEtiqueta.IdEtiqueta);
+		const categoriaRef = doc(db, "Etiquetas", formEtiqueta.idEtiqueta);
 		await updateDoc(categoriaRef, {
 			Nombre: formEtiqueta.nombre,
 			UrIEtiqueta: formEtiqueta.urlEtiqueta,

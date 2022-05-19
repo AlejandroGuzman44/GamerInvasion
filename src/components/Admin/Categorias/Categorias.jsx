@@ -26,6 +26,7 @@ const Categorias = () => {
         }))
       );
   });
+  console.debug(categorias);
 }, []);
 
   const cambiarDatos=(e) => {
@@ -34,6 +35,7 @@ const Categorias = () => {
       ...formCategoria,
       [name]: value,
     });
+	console.debug(formCategoria);
     };
 
   const activarEdicion=(categoria) =>{
@@ -66,7 +68,7 @@ const Categorias = () => {
 
     const editarCategoria = async (e) => {
        e.preventDefault ();
-       const categoriaRef = doc (db, "Categorias", formCategoria.IdCategoria);
+       const categoriaRef = doc (db, "Categorias", formCategoria.idCategoria);
        await updateDoc(categoriaRef, {
           Nombre: formCategoria.nombre,
           UrICategoria: formCategoria.urlCategoria,
