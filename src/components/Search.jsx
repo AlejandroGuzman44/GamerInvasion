@@ -70,7 +70,7 @@ export const Search = () => {
   const inputProps = {
     placeholder: "Search",
     type: "search",
-    className: "me-2",
+    className: "me-2 ms-3 search-bar",
     "aria-label": "Search",
     value,
     onChange
@@ -100,7 +100,7 @@ export const Search = () => {
 
   return (
     <>
-      <Form className="d-flex mt-2" onSubmit={handleSubmit}>
+      <Form className="my-2 d-inline-flex align-items-center justify-content-center" onSubmit={handleSubmit}>
         <Autosuggest
           suggestions={nombres}
           onSuggestionsFetchRequested={onSuggestionsFetchRequested}
@@ -112,7 +112,7 @@ export const Search = () => {
         />
         <br />
         <Button
-          type="submit" variant="outline-yellow"
+          type="submit" className="nav-btn" variant="outline-cyan"
         >
           Buscar
         </Button>
