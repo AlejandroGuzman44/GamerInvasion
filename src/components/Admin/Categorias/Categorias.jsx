@@ -26,7 +26,6 @@ const Categorias = () => {
         }))
       );
   });
-  console.debug(categorias);
 }, []);
 
   const cambiarDatos=(e) => {
@@ -35,7 +34,6 @@ const Categorias = () => {
       ...formCategoria,
       [name]: value,
     });
-	console.debug(formCategoria);
     };
 
   const activarEdicion=(categoria) =>{
