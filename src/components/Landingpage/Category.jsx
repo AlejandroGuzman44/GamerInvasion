@@ -8,14 +8,18 @@ import laptop from "../../images/c-laptop.jpg";
 import perifericos from "../../images/c-perifericos.jpg";
 import videogames from "../../images/c-videogames.jpg";
 import gRoom from "../../images/c-gaming-room.jpg";
+import title from "../../images/category-title.gif";
 
 export const Category = () => {
   return (
     <>
-      <Container className="my-5">
+      <Container className="my-5 text-center">
+        <img className="w-100 mb-3" src={title} alt="Categorías" fluid/>
         <Row>
-          <Col xs>
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >
@@ -27,8 +31,11 @@ export const Category = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs>
+
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >
@@ -40,8 +47,10 @@ export const Category = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col xs>
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >
@@ -54,35 +63,52 @@ export const Category = () => {
             </Card>
           </Col>
         </Row>
+
         <Row>
-          <Col xs>
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
-                <Card.Img variant="top" src={videogames} className="rounded-0" />
+                <Card.Img
+                  variant="top"
+                  src={videogames}
+                  className="rounded-0"
+                />
                 <Button className="hover-effect w-100">
-                  <span>Video Juegos</span>
+                  <span>VideoJuegos</span>
                 </Button>
               </Card.Body>
             </Card>
           </Col>
-          <Col xs>
+
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
-                <Card.Img variant="top" src={perifericos} className="rounded-0" />
+                <Card.Img
+                  variant="top"
+                  src={perifericos}
+                  className="rounded-0"
+                />
                 <Button className="hover-effect w-100">
                   <span>Periféricos</span>
                 </Button>
               </Card.Body>
             </Card>
           </Col>
-          <Col xs>
+
+          <Col md>
             <Card
+              data-aos="fade-up"
+              data-aos-duration="2000"
               bg="dark-purple"
               className="text-center align-items-center justify-content-center border-0"
             >

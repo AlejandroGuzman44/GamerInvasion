@@ -1,7 +1,10 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 export const AboutUs = () => {
   return (
-    <div>AboutUs</div>
+    <Container>
+      <h1>AboutUs</h1>
+      </Container>
   )
 }

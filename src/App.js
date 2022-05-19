@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 function App() {
   return (
     <>
-    <div className="d-flex flex-column min-vh-100">
+    <div className="container-app d-flex flex-column min-vh-100">
       <NavBar />
       <Rutas />
       <Footer />
