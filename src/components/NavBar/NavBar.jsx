@@ -50,7 +50,7 @@ export const NavBar = () => {
                   className="nav-dropdown-title"
                   id={`offcanvasNavbarDropdown-expand-xl`}
                 >
-                  <NavDropdown.Item as={Link} to="/store/c/pcdesktop">PC DESKTOP</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/pc desktop">PC DESKTOP</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/store/c/consolas">CONSOLAS</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/store/c/laptops">LAPTOPS</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/store/c/videojuegos">VIDEOJUEGOS</NavDropdown.Item>

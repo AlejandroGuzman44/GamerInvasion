@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams, useParams } from "react-router-dom";
-import { getAllProducts, getProductsByCategory, getProductsByKeywords } from "../services/products";
-import { ProductCard } from "./ProductCard"
+import { getAllProducts, getProductsByCategory, getProductsByKeywords } from "../../services/products";
+import { ProductCard } from "../ProductCard"
 
 
 export const Store = () => {
