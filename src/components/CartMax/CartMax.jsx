@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import { ProductoCarritoMax } from '../ProductoCarritoMax/ProductoCarritoMax'
-import { NavLink } from "react-router-dom";
-import styles from './styles.module.scss'
+import ReactWhatsapp from "react-whatsapp";
 
 
 export const CartMax = () => {
@@ -10,9 +9,20 @@ export const CartMax = () => {
 
     const [carritoAbierto, setCarritoAbierto] = useState(true)
     const [cantidadProductos, setCantidadProductos] = useState(0)
-
-
     const { productoCarrito } = useContext(ContextoCarrito)
+    const total = productoCarrito.reduce((anterior, actual) => anterior + actual.amount * actual.precio, 0);
+
+    var descripcionProductos = productoCarrito.map(item => {
+        return (
+            "\n_*Producto:*_ " + item.nombre +
+            " - _*Cantidad:*_ " + item.amount +
+            " - _*Precio:*_ " + item.amount * item.precio
+        );
+    });
+
+
+    var mensaje = `Hola, estoy interesado en comprar :  ${descripcionProductos}`
+
 
 
     useEffect(() => {
@@ -24,7 +34,6 @@ export const CartMax = () => {
     }, [productoCarrito]);
 
 
-    const total = productoCarrito.reduce((anterior, actual) => anterior + actual.amount * actual.precio, 0);
 
     return (
 
@@ -33,9 +42,6 @@ export const CartMax = () => {
 
             {productoCarrito && carritoAbierto && (
                 <div>
-
-
-                    {/* <h2>Tu carrito</h2> */}
 
                     {productoCarrito.length === 0 ? (
                         <p>Tu carrito esta vacio</p>
@@ -50,18 +56,13 @@ export const CartMax = () => {
                     )}
 
 
-
                     <h2>Total : ${total}</h2>
-                    <NavLink to='/pedido'>Pagar</NavLink>
-
+                    {/* <p>Iva incluido</p> */}
+                    <ReactWhatsapp number="58-412-725-3667" message={`${mensaje} \n Con un *monto total* de ${total} $`} > Pagar </ReactWhatsapp>
 
                 </div>
-
-
             )
             }
-
-
 
         </div >
 
