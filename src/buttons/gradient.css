@@ -1,0 +1,23 @@
+         
+.grad {
+    background-image: linear-gradient(to right, rgb(131, 249, 255) 0%, rgb(239, 211, 0)  51%, rgb(131, 249, 255) 100%);
+    padding: 5px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgba(17, 6, 28);            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: rgb(35, 2, 69);
+    text-decoration: none;
+}
+
+.grad:focus{
+    color: rgba(17, 6, 28);
+}
+         

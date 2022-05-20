@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import { Search } from '../Search';
 
-import logo from "../../images/logo.png"
+import logo from "../../images/logo.png";
 
 export const NavBar = () => {
   return (
@@ -27,8 +27,8 @@ export const NavBar = () => {
         className="py-0"
       >
         <Container className="navbar-container align-items-center" fluid>
-          <Navbar.Brand as={Link} to="/pagina-principal" className="nav-text">
-            <img alt="logo" src={logo}/>
+          <Navbar.Brand as={Link} to="/" className="nav-text">
+            <img alt="logo" src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xl`} />
           <Navbar.Offcanvas
@@ -58,7 +58,7 @@ export const NavBar = () => {
                 <Search/>
               </Nav>
               <Nav className="align-items-center">
-              <Nav.Link
+                <Nav.Link
                   as={Link}
                   to="/quienes-somos"
                   className="nav-text justify-content-end"
