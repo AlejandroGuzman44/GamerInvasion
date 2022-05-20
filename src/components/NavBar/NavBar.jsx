@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import {
   Container,
@@ -54,7 +54,7 @@ export const NavBar = () => {
                   <NavDropdown.Item as={Link} to="/store/c/consolas">CONSOLAS</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/store/c/laptops">LAPTOPS</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/store/c/videojuegos">VIDEOJUEGOS</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/store/c/perifericos">PERIFÉRICOS</NavDropdown.Item>                
+                  <NavDropdown.Item as={Link} to="/store/c/perifericos">PERIFÉRICOS</NavDropdown.Item>
                 </NavDropdown>
                 <Search />
               </Nav>
@@ -67,6 +67,11 @@ export const NavBar = () => {
                   ¿Quiénes somos?
                 </Nav.Link>
               </Nav>
+              <Nav.Link>
+                <NavLink to="/carrito" className="nav-text justify-content-end">
+                  Carrito
+                </NavLink>
+              </Nav.Link>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
