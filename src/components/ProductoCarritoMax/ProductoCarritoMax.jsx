@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import styles from './styles.module.scss'
 
-export const ProductoCarrito = ({ item }) => {
+export const ProductoCarritoMax = ({ item }) => {
     const { agregarProductoCarrito, eliminarProductoCarrito } = useContext(ContextoCarrito)
 
     const { id } = item
@@ -31,3 +31,4 @@ export const ProductoCarrito = ({ item }) => {
         </div>
     )
 }
+

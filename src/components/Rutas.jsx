@@ -1,12 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Cart } from "./Cart/Cart";
 import { Store } from "./Tienda/Store";
 import { Checkout } from "./Checkout";
 import { Landingpage } from "./Landingpage";
 import { Product_detail as ProductoDetail } from "./Product_detail";
 import { AboutUs } from "./AboutUs";
-import { CartMax } from "./CartMax";
+import { CartMax } from "./CartMax/CartMax";
 
 export const Rutas = () => {
   return (

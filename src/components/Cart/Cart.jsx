@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import styles from './styles.module.scss'
-import { ProductoCarrito } from "../ProductoCarrito/ProductoCarrito";
+import { ProductoCarritoMin } from "../ProductoCarritoMin/ProductoCarritoMin";
 import { NavLink } from 'react-router-dom'
 
 export const Cart = () => {
@@ -84,7 +84,7 @@ export const Cart = () => {
             <div className={styles.contenedorProductos}>
 
               {productoCarrito.map((item, i) => (
-                <ProductoCarrito key={i} item={item} />
+                <ProductoCarritoMin key={i} item={item} />
               ))}
 
             </div>
