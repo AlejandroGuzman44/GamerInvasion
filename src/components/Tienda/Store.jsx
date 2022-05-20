@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams, useParams } from "react-router-dom";
-import { getAllProducts, getProductsByCategory, getProductsByKeywords } from "../services/products";
-import { ProductCard } from "./ProductCard"
+import { getAllProducts, getProductsByCategory, getProductsByKeywords } from "../../services/products";
+import { ProductCard } from "../ProductCard"
+import { Productos } from "../Productos/Productos"
+import styles from '../Tienda/styles.module.scss'
 
 
 export const Store = () => {
@@ -43,14 +45,18 @@ export const Store = () => {
 
 
   return (
-    <div style={{ "color": "white" }} >
-      <h1 >Tienda</h1>
-      <h2 >Resultados para: {search}</h2>
-      {loading ? <></> : (
-        products.length !== 0 ? products.map(prod => <li> <ProductCard key={prod.id} product={prod} /> </li>) : <div>No se encontraron resultados</div>
-      )
-      }
+
+    <div className={styles.tienda}>
+      {loading ? <></> : products.length !== 0 ? <Productos data={products} /> : <div>No se encontraron resultados</div>}
     </div>
+    // <div style={{ "color": "white" }} >
+    //   <h1 >Tienda</h1>
+    //   <h2 >Resultados para: {search}</h2>
+    //   {loading ? <></> : (
+    //     products.length !== 0 ? products.map(prod => <li> <ProductCard key={prod.id} product={prod} /> </li>) : <div>No se encontraron resultados</div>
+    //   )
+    //   }
+    // </div>
   )
 }
 

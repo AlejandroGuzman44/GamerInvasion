@@ -7,7 +7,6 @@ export const ProductCard = (props) => {
             <h2>{Nombre}</h2>
             <h3>{Precio}$</h3>
             <img src={ImagenesUrl[0]}></img>
-            <p>Coincidencias: {coincidencias}</p>
         </div>
     )
 }
