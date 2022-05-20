@@ -29,7 +29,7 @@ const getNamesAllProducts = async () => {
 
     await getDocs(q).then((data) => {
         data.docs.forEach((element) => {
-            products.push({ nombre: element.data().Nombre});
+            products.push({ nombre: element.data().Nombre });
         });
     })
         .catch((error) => {
@@ -89,8 +89,6 @@ const getProductsByCategory = async (category) => {
 }
 
 const getProductsByEtiqueta = async (searchInput) => {
-
-
     const q = query(collection(db, collectionProductos), where("Etiqueta", "array-contains-any", searchInput));
     let products = [];
 
@@ -104,10 +102,29 @@ const getProductsByEtiqueta = async (searchInput) => {
         .catch((error) => {
             console.log(error);
         });;
-    return products;
+
+    return products
 }
 
-export { getAllProducts, getProductsByName, getProductsByEtiqueta, getProductsByCategory, getNamesAllProducts };
+const getProductsByKeywords = async (searchInput) => {
+    const q = query(collection(db, collectionProductos), where("Keywords", "array-contains-any", searchInput));
+    let products = [];
+
+    await getDocs(q)
+        .then((data) => {
+
+            data.docs.forEach((element) => {
+                products.push({ id: element.id, ...element.data(), });
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });;
+        
+    return products
+}
+
+export { getAllProducts, getProductsByName, getProductsByEtiqueta, getProductsByCategory, getNamesAllProducts, getProductsByKeywords };
 
 
 

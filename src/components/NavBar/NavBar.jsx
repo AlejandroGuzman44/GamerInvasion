@@ -11,7 +11,7 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
-import { Search } from '../Search';
+import { Search } from '../Search/Search';
 
 import logo from "../../images/logo.png"
 
@@ -27,8 +27,8 @@ export const NavBar = () => {
         className="py-0"
       >
         <Container className="navbar-container align-items-center" fluid>
-          <Navbar.Brand as={Link} to="/pagina-principal" className="nav-text">
-            <img alt="logo" src={logo}/>
+          <Navbar.Brand as={Link} to="/" className="nav-text">
+            <img alt="logo" src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xl`} />
           <Navbar.Offcanvas
@@ -50,15 +50,16 @@ export const NavBar = () => {
                   className="nav-dropdown-title"
                   id={`offcanvasNavbarDropdown-expand-xl`}
                 >
-                  <NavDropdown.Item>Video Juegos</NavDropdown.Item>
-                  <NavDropdown.Item>Perífericos</NavDropdown.Item>
-                  <NavDropdown.Item>Computadoras</NavDropdown.Item>
-                  <NavDropdown.Item>Consolas</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/pcdesktop">PC DESKTOP</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/consolas">CONSOLAS</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/laptops">LAPTOPS</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/videojuegos">VIDEOJUEGOS</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/store/c/perifericos">PERIFÉRICOS</NavDropdown.Item>                
                 </NavDropdown>
-                <Search/>
+                <Search />
               </Nav>
               <Nav className="align-items-center">
-              <Nav.Link
+                <Nav.Link
                   as={Link}
                   to="/quienes-somos"
                   className="nav-text justify-content-end"

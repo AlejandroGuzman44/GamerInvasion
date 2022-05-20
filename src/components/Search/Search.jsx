@@ -1,8 +1,8 @@
 import { Form, Button } from "react-bootstrap";
-
+import "./Search.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getNamesAllProducts } from "../services/products"
+import { getNamesAllProducts } from "../../services/products"
 import Autosuggest from "react-autosuggest";
 
 export const Search = () => {
@@ -68,7 +68,7 @@ export const Search = () => {
   };
 
   const inputProps = {
-    placeholder: "Search",
+    placeholder: "Buscar productos",
     type: "search",
     className: "me-2 ms-3 search-bar",
     "aria-label": "Search",
