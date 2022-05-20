@@ -33,7 +33,7 @@ export const Category = () => {
               <Card.Body>
                 <Card.Img variant="top" src={computer} className="rounded-0" />
                 <Button className="hover-effect w-100">
-                  <span>Computadoras</span>
+                  <span>PC desktop</span>
                 </Button>
               </Card.Body>
             </Card>
