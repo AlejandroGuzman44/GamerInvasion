@@ -23,6 +23,7 @@ export const NavBar = () => {
         bg="dark-purple"
         variant="dark"
         expand="xl"
+        fixed="top"
         className="py-0"
       >
         <Container className="navbar-container align-items-center" fluid>

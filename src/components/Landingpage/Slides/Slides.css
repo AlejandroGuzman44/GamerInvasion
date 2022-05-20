@@ -1,0 +1,22 @@
+/* Slides container */
+.slider{
+    position: relative;
+    text-align: center
+}
+
+/* Centered text */
+.centered {
+    padding: 10px;
+    border-radius: 20px ;
+    border: 2px solid #E7E727; 
+    font-size: 5vw;
+    box-shadow: 10px 5px 5px black;
+    color: #E7E727 !important;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'EvilEmpire';
+  }

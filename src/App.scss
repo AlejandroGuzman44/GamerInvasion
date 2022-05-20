@@ -6,6 +6,20 @@ $theme-colors: (
     "dark-purple": rgba(17, 6, 28),
 );
 
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 5,
+  7: $spacer * 7,
+  8: $spacer * 9,
+);
+
 body {
     font-family: 'Roboto' !important;
     background-color: rgba(23,2,33,255);
