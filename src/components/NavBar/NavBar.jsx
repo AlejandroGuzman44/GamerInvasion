@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import { Search } from '../Search/Search';
 
-import logo from "../../images/logo.png"
+import logo from "../../images/logo.png";
 
 export const NavBar = () => {
   return (

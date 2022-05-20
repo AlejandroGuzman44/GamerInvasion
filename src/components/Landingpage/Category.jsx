@@ -14,8 +14,15 @@ import {Link } from "react-router-dom"
 export const Category = () => {
   return (
     <>
-      <Container className="my-5 text-center">
-        <img className="w-100 mb-3" src={title} alt="Categorías" fluid/>
+      <Container className="my-8 text-center">
+        <img
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="w-100 mb-3"
+          src={title}
+          alt="Categorías"
+          fluid
+        />
         <Row>
           <Col md>
             <Card
