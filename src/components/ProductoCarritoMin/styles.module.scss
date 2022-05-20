@@ -1,0 +1,97 @@
+.productoCarrito {
+    height: 80px;
+    background-color: rgb(122, 34, 163); /* Aca cambias los colores del background de los items del carrito */
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+  
+    img {
+      height: 65px;
+      border-radius: 5px;
+
+    }
+
+    
+  
+    .contendorDeDatos {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 15px 0;
+  
+      .izquierda {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+  
+        p {
+            font-weight: bold;
+            font-size: 13px;
+            color: black;
+        }
+  
+        
+
+        .botones {
+             display: flex;
+             gap: 5px;
+
+             
+
+             button {
+                 border: none;
+                 cursor: pointer;
+                 font-size: 12px;
+                 padding: 3px 5px;
+                 border-radius: 5px;
+                 font-weight: bold;
+                 color: rgba(23,2,33,255);
+                
+
+
+             }
+
+             
+        }
+
+        
+
+      }
+  
+
+      .numerito{
+        color: black;
+      }
+
+      
+      .derecha {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+      
+
+  
+          div {
+              background-color: #FB3939;
+              width: 20px;
+              height: 20px;
+              border-radius: 999px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 12px;
+              font-weight: bold;
+          }
+  
+          p {
+              font-weight: bold;
+              color: black;
+          }
+      }
+    }
+  }

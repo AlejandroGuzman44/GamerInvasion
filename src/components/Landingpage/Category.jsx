@@ -9,6 +9,7 @@ import perifericos from "../../images/c-perifericos.jpg";
 import videogames from "../../images/c-videogames.jpg";
 import gRoom from "../../images/c-gaming-room.jpg";
 import title from "../../images/category-title.gif";
+import {Link } from "react-router-dom"
 
 export const Category = () => {
   return (
@@ -48,7 +49,7 @@ export const Category = () => {
             >
               <Card.Body>
                 <Card.Img variant="top" src={console} className="rounded-0" />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store/c/consolas" className="hover-effect w-100">
                   <span>Consolas</span>
                 </Button>
               </Card.Body>
@@ -63,7 +64,7 @@ export const Category = () => {
             >
               <Card.Body>
                 <Card.Img variant="top" src={laptop} className="rounded-0" />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store/c/laptops" className="hover-effect w-100">
                   <span>Laptops</span>
                 </Button>
               </Card.Body>
@@ -85,7 +86,7 @@ export const Category = () => {
                   src={videogames}
                   className="rounded-0"
                 />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store/c/videojuegos" className="hover-effect w-100">
                   <span>VideoJuegos</span>
                 </Button>
               </Card.Body>
@@ -105,7 +106,7 @@ export const Category = () => {
                   src={perifericos}
                   className="rounded-0"
                 />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store/c/perifericos" className="hover-effect w-100">
                   <span>Periféricos</span>
                 </Button>
               </Card.Body>

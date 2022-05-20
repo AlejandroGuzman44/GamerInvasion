@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Cart } from "../components/Cart";
-import { Store } from "../components/Store";
+import { Store } from "../components/Tienda/Store";
 import { Checkout } from "../components/Checkout";
 import { Landingpage } from "../components/Landingpage/Landingpage";
 import { Product_detail as ProductoDetail } from "../components/Product_detail";
 import { AboutUs } from "../components/AboutUs";
+import { CartMax } from "../components/CartMax/CartMax";
 
 export const Rutas = () => {
   return (
@@ -16,7 +16,9 @@ export const Rutas = () => {
         <Route path="/store" element={<Store />} />
         <Route path="/producto_detalle" element={<ProductoDetail />} />
 
-        <Route path="/carrito" element={<Cart />} />
+        <Route path="/store/c/:category" element={<Store />} />
+        
+        <Route path="/carrito" element={<CartMax />} />
         <Route path="/pedido" element={<Checkout />} />
 
         <Route path="/quienes-somos" element={<AboutUs />} />

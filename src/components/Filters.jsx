@@ -1,9 +1,10 @@
 import React from "react";
 
-export const Cart = () => {
+export const Filters = () => {
   return (
     <>
-      <h1>Carrito de compra</h1>
+      <h2>Filtros</h2>
+
     </>
   );
 };
