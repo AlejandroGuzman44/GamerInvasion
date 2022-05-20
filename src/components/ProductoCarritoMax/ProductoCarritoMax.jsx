@@ -11,7 +11,7 @@ export const ProductoCarritoMax = ({ item }) => {
         <div className={styles.productoCarrito}>
 
 
-            <img src={item.img} />
+            <img src={item.ImagenesUrl[0]} />
             <div className={styles.contendorDeDatos}>
                 <div className={styles.izquierda}>
                     <p>{item.Nombre}</p>
