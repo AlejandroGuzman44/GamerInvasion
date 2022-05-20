@@ -10,7 +10,7 @@ import "./Feature.css";
 export const Feature = () => {
   return (
     <>
-      <Container className="my-8">
+      <Container className="my-7">
         <Row className="align-items-center">
           <Col lg>
             <Card

@@ -8,6 +8,7 @@ export const Landingpage = () => {
   return (
     <div>
         <Slides/>
+        <SiteInfo/>
         <Feature/>
         <Category/>
     </div>
