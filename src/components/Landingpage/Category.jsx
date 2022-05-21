@@ -28,7 +28,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -44,7 +44,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -59,7 +59,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -77,7 +77,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -97,7 +97,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -117,7 +117,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
