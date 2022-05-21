@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Row, Spinner } from "react-bootstrap";
 import { useSearchParams, useParams } from "react-router-dom";
 import {
@@ -8,7 +8,12 @@ import {
 } from "../../services/products";
 import { Productos } from "../Productos/Productos";
 
+import { Contexto } from "../context2.0/Contexto"
+
 export const Store = () => {
+
+  const { products: productos, setProducts: setProductos, filterByMarca, filterData, emptyFilterData } = useContext(Contexto);
+
   const [query, setQuery] = useSearchParams();
   const search = query.get("search");
   const [products, setProducts] = useState([]);
@@ -32,7 +37,11 @@ export const Store = () => {
   };
 
   useEffect(() => {
-    if (search) {
+    if (filterData.length !== 0 && !search && !category) {
+      setProducts(filterData);
+      setLoading(false);
+      
+    } else if (search) {
       getProductsByKeywords(search.toLowerCase().split(" ")).then(
         (response) => {
           setProducts(orderProducts(response));
@@ -48,19 +57,20 @@ export const Store = () => {
       getAllProducts().then((response) => {
         setProducts(response);
         setLoading(false);
-      });
+      }
+      )
     }
-  }, [search, category]);
+  }, [search, category, filterByMarca]);
 
   return (
     <div className="d-flex align-items-center justify-content-center">
       {loading ? (
         <>
           {" "}
-          <Row style={{position:"absolute", top: "50%"}}>
-          <Spinner variant="yellow" animation="grow" />
-          <Spinner className="mx-5" variant="yellow" animation="grow" />
-          <Spinner variant="yellow" animation="grow" />
+          <Row style={{ position: "absolute", top: "50%" }}>
+            <Spinner variant="yellow" animation="grow" />
+            <Spinner className="mx-5" variant="yellow" animation="grow" />
+            <Spinner variant="yellow" animation="grow" />
           </Row>
         </>
       ) : products.length !== 0 ? (

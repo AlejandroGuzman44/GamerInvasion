@@ -6,21 +6,27 @@ import { Cart } from "./components/Cart/Cart";
 import { Rutas } from "./Rutas/Rutas";
 import { Store } from './components/Tienda/Store';
 import { ContextoCarritoProvider } from "./Context/ContextoCarrito";
-
+import { Filters } from "./components/Filters";
+import { ContextoProvider } from './components/context2.0/Contexto';
+import Productos from './components/context2.0/Productos';
 
 
 function App() {
+
+
   return (
-    <ContextoCarritoProvider>
-      <>
-        <div className="container-app d-flex flex-column min-vh-100">
-          <NavBar />
-          <Cart />
-          <Rutas />
-          <Footer />
-        </div>
-      </>
-    </ContextoCarritoProvider>
+    <ContextoProvider>
+      <ContextoCarritoProvider>
+        <>
+          <div className="container-app d-flex flex-column min-vh-100">
+            <NavBar />
+            <Cart />
+            <Rutas />
+            <Footer />
+          </div>
+        </>
+      </ContextoCarritoProvider>
+    </ContextoProvider>
   );
 }
 
