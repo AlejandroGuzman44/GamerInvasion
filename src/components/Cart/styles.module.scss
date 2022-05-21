@@ -5,6 +5,7 @@
     justify-content: flex-end;
     position: fixed;
     z-index: 10;
+    margin-top: 10px;
   
     .btn_contenedor_carrito {
       position: absolute;
@@ -19,7 +20,7 @@
       }
   
       .btn_carrito {
-        background-color: rgba(23,2,33,255);
+        background:linear-gradient(180deg, rgb(54, 0, 71) 0%, rgba(24,0,71,1) 80%);
         width: 60px;
         height: 60px;
         display: flex;
@@ -46,11 +47,10 @@
 
     .carrito {
       position: absolute;
-      margin-top: 10px;
       margin-right: 20px;
       border-radius: 30px;
       width: 400px;
-      background-color: rgba(23,2,33,255);
+      background: linear-gradient(180deg, rgba(43,0,56,1) 20%, rgba(24,0,71,1) 100%);
       color: white;
   
       h2 {
@@ -68,19 +68,16 @@
       .total {
         text-align: center;
         font-weight: bold;
-        margin-top: 15px;
-        padding-bottom: 35px;
+        margin-top: 20px;
+        padding-bottom: 15px;
       }
 
       .irCarrito{
-        text-align:center;
-        text-decoration: none;
-        color: white;
+        color: rgba(17, 6, 28);
         font-weight: bold;
         margin-left: 150px;
-        cursor: pointer;
-        font-size: 20px;
-        
+        background-color: rgb(131, 249, 255) !important;
+        margin-bottom: 15px;
       }
 
       .contenedorProductos{

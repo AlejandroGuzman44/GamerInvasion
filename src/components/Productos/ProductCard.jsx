@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { ContextoCarrito } from "../../Context/ContextoCarrito";
 import { Button, Card } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 export const ProductCard = (props) => {
   const producto = props.producto;
@@ -28,7 +30,7 @@ export const ProductCard = (props) => {
             variant="cyan"
             onClick={() => agregarProductoCarrito(producto)}
           >
-            Agregar al carrito
+            Agregar al carrito <FontAwesomeIcon icon={faCartPlus} />
           </Button>
         </Card.Body>
       </Card>

@@ -23,7 +23,7 @@ export const ContextoCarritoProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem("productosCarrito", JSON.stringify(productoCarrito));
-        console.log(productoCarrito);
+        // console.log(productoCarrito);
     }, [productoCarrito]);
 
 

@@ -1,29 +1,29 @@
 .productoCarrito {
-    height: 80px;
-    background-color: rgb(122, 34, 163); /* Aca cambias los colores del background de los items del carrito */
-    margin-top: 20px;
+    background-color: white; /* Aca cambias los colores del background de los items del carrito */
+    margin: 8px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+    border-radius: 3px;
+
   
     img {
-      height: 65px;
-      border-radius: 5px;
-
+      height: 50px;
+      width: 60px;
     }
-
-    
   
     .contendorDeDatos {
       display: flex;
+      text-transform: capitalize;
       justify-content: space-between;
       width: 100%;
       height: 100%;
-      padding: 15px 0;
+      padding: 10px 0;
+      align-items: center;
   
       .izquierda {
-        padding-left: 20px;
+        margin-left: 17px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -34,63 +34,58 @@
             color: black;
         }
   
-        
-
         .botones {
              display: flex;
-             gap: 5px;
-
-             
+             gap: 10px;
 
              button {
-                 border: none;
-                 cursor: pointer;
+              border:none !important;
+                 background-color: rgb(131, 249, 255) !important;
                  font-size: 12px;
                  padding: 3px 5px;
-                 border-radius: 5px;
                  font-weight: bold;
                  color: rgba(23,2,33,255);
-                
-
-
              }
 
-             
+             button:hover {
+              background-color: rgb(131, 249, 255) !important;
+          }
+
+          button:focus {
+            background-color: rgb(131, 249, 255) !important;
         }
-
-        
-
+        }
       }
   
-
       .numerito{
         color: white;
       }
-
       
       .derecha {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-end;
-      
-
+          align-items: end;
+          padding: 2px;
   
           div {
-              background-color: #FB3939;
+              background-color: rgb(239, 211, 0);
               width: 20px;
               height: 20px;
               border-radius: 999px;
               display: flex;
               align-items: center;
+              margin-bottom: 5px;
               justify-content: center;
               font-size: 12px;
               font-weight: bold;
+              color: rgba(17, 6, 28);
           }
   
           p {
-              font-weight: bold;
+            font-size: 12px;
+              text-align: end;
               color: black;
+              margin: 0;
           }
       }
     }

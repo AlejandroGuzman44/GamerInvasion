@@ -66,7 +66,7 @@ export const Store = () => {
       ) : products.length !== 0 ? (
         <Productos data={products} />
       ) : (
-        <div style={{ color: "white", margin: "15px" }}>
+        <div style={{ color: "white", position:"absolute", top: "50%", fontWeight:"bold", fontSize: "2em"}}>
           <span>No se encontraron resultados</span>
         </div>
       )}
