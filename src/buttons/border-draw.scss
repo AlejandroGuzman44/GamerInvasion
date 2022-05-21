@@ -1,0 +1,46 @@
+
+$btn1Dur: 1s;
+$btn1Clr: rgb(131, 249, 255); // Main color
+$btn1Clr2: rgb(239, 211, 0); // Hover color
+
+.btn1{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: $btn1Clr;
+  transition: color $btn1Dur/8 $btn1Dur*0.75;
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform $btn1Dur linear, border-color 0s $btn1Dur/2 linear;
+  }
+  &:before{
+    border-left: 1px solid $btn1Clr;
+    border-right: 1px solid $btn1Clr;
+  }
+  &:after{
+    border-top: 1px solid $btn1Clr;
+    border-bottom: 1px solid $btn1Clr;
+  }
+}
+.btn1:hover{
+  color: $btn1Clr2;
+  &:before, &:after{
+    border-color: $btn1Clr2;
+  }
+  &:before{
+    transform: skewY(180deg);
+  }
+  &:after{
+    transform: skewX(-180deg);
+  }
+}
