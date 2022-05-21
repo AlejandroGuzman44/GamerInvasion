@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import styles from '../Productos/styles.module.scss'
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
-import { ProductCard } from "../ProductCard"
+import { ProductCard } from "./ProductCard"
 import { Button, Card, Row, Col, Container } from "react-bootstrap";
 
 export const Productos = (props) => {
@@ -19,8 +18,8 @@ export const Productos = (props) => {
                 <Col xs={9} >
                     <Row>
                         {props.data.map((producto, index) => (
-                            <Col >
-                                <ProductCard key={index} producto={producto} />
+                            <Col key={index}>
+                                <ProductCard producto={producto} />
                             </Col>
                         ))}
                     </Row>

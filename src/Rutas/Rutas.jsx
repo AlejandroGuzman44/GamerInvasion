@@ -14,7 +14,7 @@ export const Rutas = () => {
         <Route index element={<Landingpage />} />
 
         <Route path="/store" element={<Store />} />
-        <Route path="/producto_detalle" element={<ProductoDetail />} />
+        <Route path="/store/p/:product" element={<ProductoDetail />} />
 
         <Route path="/store/c/:category" element={<Store />} />
         

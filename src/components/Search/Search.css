@@ -9,7 +9,7 @@
     height: 30px;
     padding: 5px;  
     border: 1px solid #aaa;
-    border-radius: 4px;
+    border-radius: 5px;
   }
   
   .react-autosuggest__input:focus {

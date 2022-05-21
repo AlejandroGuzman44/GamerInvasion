@@ -34,10 +34,9 @@
         position: absolute;
         top: 0;
         right: 0;
-        background-color: #fb3939;
+        background-color: rgb(239, 211, 0);
         font-size: 12px;
         font-weight: bold;
-        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -91,16 +90,3 @@
       }
 }}
 
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
-
-::-webkit-scrollbar:vertical {
-  width: 3px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #797979;
-  border-radius: 20px;
-}

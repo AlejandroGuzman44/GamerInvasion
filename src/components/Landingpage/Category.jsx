@@ -21,20 +21,20 @@ export const Category = () => {
           className="w-100 mb-3"
           src={title}
           alt="Categorías"
-          fluid
+          fluid = {1}
         />
         <Row>
           <Col md>
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
                 <Card.Img variant="top" src={computer} className="rounded-0" />
-                <Button as={Link} to="/store/c/pc desktop" className="hover-effect w-100">
-                  <span>Computadoras</span>
+                <Button className="hover-effect w-100">
+                  <span>PC desktop</span>
                 </Button>
               </Card.Body>
             </Card>
@@ -44,7 +44,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -59,7 +59,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -77,7 +77,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -97,7 +97,7 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
@@ -117,12 +117,12 @@ export const Category = () => {
             <Card
               data-aos="fade-up"
               data-aos-duration="2000"
-              bg="dark-purple"
+              bg="transparent"
               className="text-center align-items-center justify-content-center border-0"
             >
               <Card.Body>
                 <Card.Img variant="top" src={gRoom} className="rounded-0" />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store" className="hover-effect w-100">
                   <span>Y mucho más...</span>
                 </Button>
               </Card.Body>
