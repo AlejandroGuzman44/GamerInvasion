@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams, useParams } from "react-router-dom";
 import { getAllProducts, getProductsByCategory, getProductsByKeywords } from "../../services/products";
-import { ProductCard } from "../ProductCard"
 import { Productos } from "../Productos/Productos"
 import styles from '../Tienda/styles.module.scss'
 

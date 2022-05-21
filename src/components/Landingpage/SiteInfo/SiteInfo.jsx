@@ -3,6 +3,7 @@ import { Container, Col, Row, Button } from "react-bootstrap";
 
 import pic from "../../../images/site-pic.png";
 import vid from "../../../images/site-background.gif";
+import { Link } from "react-router-dom"
 
 import "./SiteInfo.css";
 import "../../../buttons/gradient.css";
@@ -22,7 +23,7 @@ export const SiteInfo = () => {
             className="site-info"
           >
             <img src={vid} alt="site-pic" className="w-100" />
-            <Button className="grad align-self-bottom">¡Compra ahora!</Button>
+            <Button as={Link} to="/store" className="grad align-self-bottom">¡Compra ahora!</Button>
           </Col>
         </Row>
       </Container>

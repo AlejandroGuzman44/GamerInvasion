@@ -1,34 +1,29 @@
-import React, { useContext } from 'react'
-import styles from '../Productos/styles.module.scss'
-import { ContextoCarrito } from '../../Context/ContextoCarrito'
-
+import React from 'react'
+import { ProductCard } from "./ProductCard"
+import { Row, Col, Container } from "react-bootstrap";
 
 export const Productos = (props) => {
 
-    const { agregarProductoCarrito } = useContext(ContextoCarrito);
-
     return (
-
-        <div className={styles.contenedor_productos}>
-            {props.data.map((producto, index) => (
-
-                <div key={index} className={styles.productos}>
-
-                    <div className={styles.contenedor_imagen}>
-                        <img src={producto.ImagenesUrl} alt={producto.Nombre} />
+        <Container className=" mt-5">
+            <Row>
+                <Col xs={3}>
+                    <div style={{ color: "white", background: "red" }}>
+                        Filtros
                     </div>
+                </Col>
+                <Col xs={9} >
+                    <Row className="justify-content-center align-items-center">
+                        {props.data.map((producto, index) => (
+                            <Col className="d-flex">
+                                <ProductCard key={index} producto={producto} />
+                            </Col>
+                        ))}
+                    </Row>
 
-                    <div>
-                        <p>
-                            {producto.Nombre} - {producto.Precio}$
-                        </p>
-                    </div>
-                    <button onClick={() => agregarProductoCarrito(producto)}>Agregar al carrito</button>
+                </Col>
+            </Row>
+        </Container>
 
-                </div>
-
-            ))}
-
-        </div>
     )
 }
