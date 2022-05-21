@@ -1,25 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect  } from 'react';
 import data from './useFetch.json';
 import { useContext } from 'react';
-import ProductsContext from './context/Products/ProductsContext'
+
+
 
 const UserInfo =()=> {
  
-  const { products, getFilteredProducts } = useContext(ProductsContext)
 
-  useEffect(() => {
   
-  getFilteredProducts();
-  console.log(products)
-
-  },[])
   
-  return (                                                        //Cambiar en base a los productos
+  return (                                                       
     <div>
-        {data.map((user, index) => {
+        {data.map((producto, index) => {
             return(
                 <div key={index}>
-                    <h3>{user.id}-. {user.name}</h3>            
+                    <h3>{producto.Nombre}</h3>            
                     
                 </div>
             )
@@ -29,7 +24,3 @@ const UserInfo =()=> {
 }
 
 export default UserInfo
-
-//marca: combobox
-//precio: rango
-//checkboxes
