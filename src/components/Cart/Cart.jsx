@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import styles from './styles.module.scss'
 import { ProductoCarritoMin } from "../ProductoCarritoMin/ProductoCarritoMin";
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Button } from "react-bootstrap";
 
 export const Cart = () => {
 
@@ -91,9 +92,9 @@ export const Cart = () => {
           )}
 
           <h2 className={styles.total}>Total : ${total}</h2>
-          <NavLink className={styles.irCarrito} to='/carrito' onClick={() => {
+          <Button className={styles.irCarrito} as={Link} to='/carrito' onClick={() => {
             setCarritoAbierto(false)
-          }}>Ir al carrito</NavLink>
+          }}>Ir al carrito</Button>
 
 
         </div>
