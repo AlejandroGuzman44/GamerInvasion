@@ -67,11 +67,7 @@ export const NavBar = () => {
                   ¿Quiénes somos?
                 </Nav.Link>
               </Nav>
-              <Nav.Link>
-                <NavLink to="/carrito" className="nav-text justify-content-end">
-                  Carrito
-                </NavLink>
-              </Nav.Link>
+              
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

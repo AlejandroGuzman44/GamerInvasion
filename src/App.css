@@ -15,7 +15,7 @@
 
 ::-webkit-scrollbar
 {
-  width: 15px;
+  min-width: 10px;
   background-color: rgba(23,2,33,255);
 }
 

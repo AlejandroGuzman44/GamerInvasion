@@ -49,7 +49,9 @@ export const Search = () => {
     if (value.length >= 2) {
       return (
         <div
-          className="sugerencia"
+          className="sugerencia dropdown"
+          id={`offcanvasNavbarDropdown-expand-xl`}
+         
           onClick={() => selectNombre(suggestion)}
         >
           {`${suggestion.nombre}`}
