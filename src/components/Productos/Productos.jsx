@@ -15,7 +15,7 @@ export const Productos = (props) => {
                 <Col xs={9} >
                     <Row className="justify-content-center align-items-center">
                         {props.data.map((producto, index) => (
-                            <Col key={index} className="d-flex justify-content-center ">
+                            <Col key={index} className="d-flex justify-content-center">
                                 <ProductCard producto={producto} />
                             </Col>
                         ))}
