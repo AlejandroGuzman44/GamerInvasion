@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import { Store } from "../components/Tienda/Store";
 import { Checkout } from "../components/Checkout";
 import { Landingpage } from "../components/Landingpage/Landingpage";
-import { Product_detail as ProductoDetail } from "../components/Product_detail";
 import { AboutUs } from "../components/AboutUs";
 import { CartMax } from "../components/CartMax/CartMax";
 
@@ -14,7 +13,6 @@ export const Rutas = () => {
         <Route index element={<Landingpage />} />
 
         <Route path="/store" element={<Store />} />
-        <Route path="/producto_detalle" element={<ProductoDetail />} />
 
         <Route path="/store/c/:category" element={<Store />} />
         

@@ -27,7 +27,8 @@ export const ContextoCarritoProvider = ({ children }) => {
     }, [productoCarrito]);
 
 
-    const agregarProductoCarrito = (producto) => {
+    const agregarProductoCarrito = (producto, e) => {
+        e.stopPropagation();
         const enCarrito = productoCarrito.find((productoEnCarrito) => productoEnCarrito.id === producto.id);
 
         if (enCarrito) {
