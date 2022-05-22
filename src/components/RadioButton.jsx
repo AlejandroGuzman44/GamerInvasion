@@ -1,15 +1,6 @@
-import { useContext, useState } from "react";
-import React, { useEffect } from "react";
-import { Contexto } from "../components/context2.0/Contexto"
+import React from "react";
 
 const RadioButton = (props) => {
-
-  // const { productos, setProductos } = useContext(Contexto);
-  // setProductos(props.productos)
-
-  const dataFiltrada = () => {
-
-  }
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Row, Spinner } from "react-bootstrap";
 import { useSearchParams, useParams } from "react-router-dom";
 import {
@@ -8,14 +8,13 @@ import {
 } from "../../services/products";
 import { Productos } from "../Productos/Productos";
 
-import { Contexto } from "../context2.0/Contexto"
+//import { Contexto } from "../context2.0/Contexto"
 
 export const Store = () => {
 
-  const { products: productos, setProducts: setProductos, filterByMarca, filterData, emptyFilterData } = useContext(Contexto);
-
   const [query, setQuery] = useSearchParams();
   const search = query.get("search");
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = useParams();
@@ -37,30 +36,23 @@ export const Store = () => {
   };
 
   useEffect(() => {
-    if (filterData.length !== 0 && !search && !category) {
-      setProducts(filterData);
-      setLoading(false);
-      
-    } else if (search) {
-      getProductsByKeywords(search.toLowerCase().split(" ")).then(
-        (response) => {
-          setProducts(orderProducts(response));
-          setLoading(false);
-        }
-      );
+    if (search) {
+      getProductsByKeywords(search.toLowerCase().split(" ")).then((response) => {
+        setProducts(orderProducts(response))
+        setLoading(false)
+      })
     } else if (category) {
       getProductsByCategory(category).then((response) => {
-        setProducts(response);
-        setLoading(false);
-      });
+        setProducts(response)
+        setLoading(false)
+      })
     } else {
       getAllProducts().then((response) => {
-        setProducts(response);
-        setLoading(false);
-      }
-      )
+        setProducts(response)
+        setLoading(false)
+      })
     }
-  }, [search, category, filterByMarca]);
+  }, [search, category]);
 
   return (
     <div className="d-flex align-items-center justify-content-center">

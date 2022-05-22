@@ -1,8 +1,8 @@
 import { useEffect, useState, createContext } from 'react';
-
 export const Contexto = createContext();
 
 export const ContextoProvider = (props) => {
+
 
     const [products, setProducts] = useState([]);
 
@@ -15,6 +15,7 @@ export const ContextoProvider = (props) => {
 
     const emptyFilterData = () => {
         setFilterData([])
+
     }
 
 
