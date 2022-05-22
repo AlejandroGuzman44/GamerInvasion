@@ -25,7 +25,7 @@ export const ProductCard = (props) => {
       right: 'auto',
       bottom: 'auto',
       width: '70%',
-      height: '60%'
+      height: 'auto'
     },
   };
 
@@ -67,16 +67,16 @@ export const ProductCard = (props) => {
       >
         <Container>
           <Row>
-              <h2>{producto.Nombre}</h2>
+              <h2 style={{textAlign: "center", fontWeight: "bold", textTransform: "capitalize", marginBottom: "20px"}}>{producto.Nombre}</h2>
               <CloseButton className="closeButton" onClick={cerrarDetalle}/>
           </Row>
           <Row>
             <Col sm={6}>
-              <img src={producto.ImagenesUrl} width="100%"/>
+              <img src={producto.ImagenesUrl} alt="producto" height="100%"/>
             </Col>
-            <Col>
-              <h3>Marca: {producto.Marca}</h3>
-              <h4>Descripción: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tellus nisl. Vestibulum congue dignissim urna quis blandit. Curabitur ultricies metus sollicitudin nibh auctor, non congue massa scelerisque. Mauris quis efficitur ligula. Quisque id risus et ex vehicula commodo.</h4>
+            <Col className="justify-content-center">
+              <h3 style={{textTransform: "capitalize"}}>Marca: {producto.Marca}</h3>
+              <h4 style={{textAlign: "justify"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tellus nisl. Vestibulum congue dignissim urna quis blandit. Curabitur ultricies metus sollicitudin nibh auctor, non congue massa scelerisque. Mauris quis efficitur ligula. Quisque id risus et ex vehicula commodo.</h4>
               <h3><b>${producto.Precio}</b></h3>
               <Button
                 className="align-self-end"
