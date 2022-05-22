@@ -11,7 +11,7 @@ export const ProductCard = (props) => {
     return (
         <>
             <Card
-                className="m-2 p-3 text-center justify-content-center"
+                className="m-2 p-3 text-center justify-content-center glow"
 
             >
                 <div style={{display:"block"}}>
@@ -21,7 +21,7 @@ export const ProductCard = (props) => {
                         variant="top"
                         src={producto.ImagenesUrl}
                         alt={producto.Nombre}
-                        style={{ width: "15rem", height: "12rem", padding:"2px" }}
+                        style={{ width: "15rem", height: "12rem" }}
                     />
                 </div>
                 <Card.Body>

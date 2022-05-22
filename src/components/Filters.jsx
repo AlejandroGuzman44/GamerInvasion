@@ -62,15 +62,14 @@ export const Filters = (props) => {
   return (
     <>
       <div>
-        <h3>
-          Marcas
-        </h3>
+        <h4> <b> Marcas </b>
+        </h4>
         <form onChange={onChangeValueMarca}>
           {getBrands().map(marca => <RadioButton value={marca} />)}
         </form>
-        <h3>
-          Precios
-        </h3>
+        <br></br>
+        <h4> <b> Precios </b>
+        </h4>
         <form onChange={onChangeValuePrecio}>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value={1} />
