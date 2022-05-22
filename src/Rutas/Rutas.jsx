@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Store } from "../components/Tienda/Store";
 import { Checkout } from "../components/Checkout";
 import { Landingpage } from "../components/Landingpage/Landingpage";
-import { AboutUs } from "../components/AboutUs";
+import { AboutUs } from "../components/AboutUs/AboutUs";
 import { CartMax } from "../components/CartMax/CartMax";
 
 export const Rutas = () => {
