@@ -17,7 +17,7 @@
 ::-webkit-scrollbar
 {
   width: 10px;
-  background-color: rgba(23,2,33,255);
+  background:  linear-gradient(180deg, rgba(43,0,56,1) 20%, rgba(24,0,71,1) 100%);
 }
 
 ::-webkit-scrollbar-thumb 

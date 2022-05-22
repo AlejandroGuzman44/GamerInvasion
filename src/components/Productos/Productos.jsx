@@ -15,12 +15,11 @@ export const Productos = (props) => {
                 <Col xs={9} >
                     <Row className="justify-content-center align-items-center">
                         {props.data.map((producto, index) => (
-                            <Col className="d-flex justify-content-center ">
-                                <ProductCard key={index} producto={producto} />
+                            <Col key={index} className="d-flex justify-content-center">
+                                <ProductCard producto={producto} />
                             </Col>
                         ))}
                     </Row>
-
                 </Col>
             </Row>
         </Container>

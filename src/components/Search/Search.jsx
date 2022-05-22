@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getNamesAllProducts } from "../../services/products"
 import Autosuggest from "react-autosuggest";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const Search = () => {
   const navigate = useNavigate();
@@ -116,7 +118,7 @@ export const Search = () => {
         <Button
           type="submit" className="nav-btn" variant="outline-cyan"
         >
-          Buscar
+          <FontAwesomeIcon icon={faSearch}/>
         </Button>
       </Form>
     </>
