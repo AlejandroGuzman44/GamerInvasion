@@ -1,14 +1,20 @@
 import { useContext, useState } from "react";
 import { ContextoCarrito } from "../../Context/ContextoCarrito";
-import { Button, Row, Col, Container, CloseButton, Card } from "react-bootstrap";
-import { ProductDetail } from "./ProductDetail"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import Modal from 'react-modal';
+import {
+  Button,
+  Row,
+  Col,
+  Container,
+  CloseButton,
+  Card,
+} from "react-bootstrap";
+import { ProductDetail } from "./ProductDetail";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-modal";
 import "./ProductDetail.css";
 
 export const ProductCard = (props) => {
-
   const producto = props.producto;
   const { agregarProductoCarrito } = useContext(ContextoCarrito);
 
@@ -20,12 +26,12 @@ export const ProductCard = (props) => {
 
   const customStyles = {
     content: {
-      top: '20%',
-      left: '15%',
-      right: 'auto',
-      bottom: 'auto',
-      width: '70%',
-      height: 'auto'
+      top: "20%",
+      left: "15%",
+      right: "auto",
+      bottom: "auto",
+      width: "70%",
+      height: "auto",
     },
   };
 
@@ -43,17 +49,19 @@ export const ProductCard = (props) => {
           variant="top"
           src={producto.ImagenesUrl}
           alt={producto.Nombre}
-          style={{ width: "15rem", height: "12rem"}}
+          style={{ width: "15rem", height: "12rem" }}
         />
         <Card.Body>
-          <Card.Title style={{ textTransform: "capitalize" , fontWeight: "bold" }}>
+          <Card.Title
+            style={{ textTransform: "capitalize", fontWeight: "bold" }}
+          >
             {producto.Nombre}
           </Card.Title>
           <Card.Text>${producto.Precio}</Card.Text>
           <Button
             className="align-self-end"
             variant="cyan"
-            onClick={(e) => agregarProductoCarrito(producto,e)}
+            onClick={(e) => agregarProductoCarrito(producto, e)}
           >
             Agregar al carrito <FontAwesomeIcon icon={faCartPlus} />
           </Button>
@@ -65,26 +73,47 @@ export const ProductCard = (props) => {
         style={customStyles}
         contentLabel="Detalle del producto"
       >
-        <Container>
+        <Container md={9}>
           <Row>
-              <h2 style={{textAlign: "center", fontWeight: "bold", textTransform: "capitalize", marginBottom: "20px"}}>{producto.Nombre}</h2>
-              <CloseButton className="closeButton" onClick={cerrarDetalle}/>
+            <CloseButton className="closeButton" onClick={cerrarDetalle} />
           </Row>
           <Row>
-            <Col sm={6}>
-              <img src={producto.ImagenesUrl} alt="producto" height="100%"/>
+            <Col sm={5} className="text-center">
+              <img src={producto.ImagenesUrl} alt="producto" height="100%" width="auto" object-fit="contain"/>
             </Col>
             <Col className="justify-content-center">
-              <h3 style={{textTransform: "capitalize"}}>Marca: {producto.Marca}</h3>
-              <h4 style={{textAlign: "justify"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in tellus nisl. Vestibulum congue dignissim urna quis blandit. Curabitur ultricies metus sollicitudin nibh auctor, non congue massa scelerisque. Mauris quis efficitur ligula. Quisque id risus et ex vehicula commodo.</h4>
-              <h3><b>${producto.Precio}</b></h3>
-              <Button
-                className="align-self-end"
-                variant="cyan"
-                onClick={() => agregarProductoCarrito(producto)}
+              <h2
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  textTransform: "capitalize",
+                  marginBottom: "20px",
+                }}
               >
-                Agregar al carrito
-              </Button>
+                {producto.Nombre}
+              </h2>
+              <h3 style={{ textTransform: "capitalize" }}>
+                Marca: {producto.Marca}
+              </h3>
+              <h4 style={{ textAlign: "justify" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum in tellus nisl. Vestibulum congue dignissim urna quis
+                blandit. Curabitur ultricies metus sollicitudin nibh auctor, non
+                congue massa scelerisque. Mauris quis efficitur ligula. Quisque
+                id risus et ex vehicula commodo.
+              </h4>
+              <div className="text-center">
+                <h3>
+                  <b>${producto.Precio}</b>
+                </h3>
+                <Button
+                  className="align-self-end"
+                  variant="cyan"
+                  onClick={() => agregarProductoCarrito(producto)}
+                >
+                  Agregar al carrito
+                </Button>
+              </div>
             </Col>
           </Row>
         </Container>

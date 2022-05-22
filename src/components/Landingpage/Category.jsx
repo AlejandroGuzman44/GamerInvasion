@@ -21,7 +21,7 @@ export const Category = () => {
           className="w-100 mb-3"
           src={title}
           alt="Categorías"
-          fluid
+          fluid = {1}
         />
         <Row>
           <Col md>
@@ -122,7 +122,7 @@ export const Category = () => {
             >
               <Card.Body>
                 <Card.Img variant="top" src={gRoom} className="rounded-0" />
-                <Button className="hover-effect w-100">
+                <Button as={Link} to="/store" className="hover-effect w-100">
                   <span>Y mucho más...</span>
                 </Button>
               </Card.Body>

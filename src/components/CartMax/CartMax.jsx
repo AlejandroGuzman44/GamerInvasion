@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ContextoCarrito } from '../../Context/ContextoCarrito'
 import { ProductoCarritoMax } from '../ProductoCarritoMax/ProductoCarritoMax'
 import ReactWhatsapp from "react-whatsapp";
+import { Button, Card, Row, Col, Container } from "react-bootstrap";
 
 
 export const CartMax = () => {
@@ -33,38 +34,48 @@ export const CartMax = () => {
 
     }, [productoCarrito]);
 
-
-
     return (
-
-        <div>
-
-
+        <>
             {productoCarrito && carritoAbierto && (
-                <div>
-
+                <Container fluid="md">
                     {productoCarrito.length === 0 ? (
                         <p>Tu carrito esta vacio</p>
                     ) : (
-                        <div>
+                        <div class="row no-gutters">
+                            <Row>
+                                <Col xs={9}>
+                                    <Row>
+                                        {productoCarrito.map((item, i) => (
+                                            <Col key={i} className="d-flex justify-content-center" >
+                                                <ProductoCarritoMax item={item} />
+                                            </Col>
+                                        ))}
 
-                            {productoCarrito.map((item, i) => (
-                                <ProductoCarritoMax key={i} item={item} />
-                            ))}
+                                    </Row>
+                                </Col>
+                                <Col xs={3} style={{ "margin-top": "0.3rem" }}>
+                                    <Card style={{ color: "white", border: "1px", "border-color": "white", "background": "linear-gradient(180deg, rgb(43, 0, 56) 20%, rgb(24, 0, 71) 100%)", "border-radius": "0.5rem", "padding": "2rem", "position": "fixed", "display": "block", "text-align": "center" }}>
+                                        <h3>Total: {total}$</h3>
+                                        <br></br>
+                                        {/* <p>Iva incluido</p> */}
+                                        <ReactWhatsapp
+                                            className="btn btn-cyan"
+                                            number="58-412-725-3667"
+                                            message={`${mensaje} \n Con un *monto total* de ${total} $`}
+                                        >
+                                            Pagar
+                                        </ReactWhatsapp>
+                                    </Card>
+                                </Col>
 
+                            </Row>
                         </div>
                     )}
 
-
-                    <h2>Total : ${total}</h2>
-                    {/* <p>Iva incluido</p> */}
-                    <ReactWhatsapp number="58-412-725-3667" message={`${mensaje} \n Con un *monto total* de ${total} $`} > Pagar </ReactWhatsapp>
-
-                </div>
+                </Container>
             )
             }
-
-        </div >
+        </ >
 
     );
 };

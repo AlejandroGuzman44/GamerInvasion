@@ -8,9 +8,13 @@ import {
 } from "../../services/products";
 import { Productos } from "../Productos/Productos";
 
+//import { Contexto } from "../context2.0/Contexto"
+
 export const Store = () => {
+
   const [query, setQuery] = useSearchParams();
   const search = query.get("search");
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = useParams();
@@ -33,22 +37,20 @@ export const Store = () => {
 
   useEffect(() => {
     if (search) {
-      getProductsByKeywords(search.toLowerCase().split(" ")).then(
-        (response) => {
-          setProducts(orderProducts(response));
-          setLoading(false);
-        }
-      );
+      getProductsByKeywords(search.toLowerCase().split(" ")).then((response) => {
+        setProducts(orderProducts(response))
+        setLoading(false)
+      })
     } else if (category) {
       getProductsByCategory(category).then((response) => {
-        setProducts(response);
-        setLoading(false);
-      });
+        setProducts(response)
+        setLoading(false)
+      })
     } else {
       getAllProducts().then((response) => {
-        setProducts(response);
-        setLoading(false);
-      });
+        setProducts(response)
+        setLoading(false)
+      })
     }
   }, [search, category]);
 
@@ -57,10 +59,10 @@ export const Store = () => {
       {loading ? (
         <>
           {" "}
-          <Row style={{position:"absolute", top: "50%"}}>
-          <Spinner variant="yellow" animation="grow" />
-          <Spinner className="mx-5" variant="yellow" animation="grow" />
-          <Spinner variant="yellow" animation="grow" />
+          <Row style={{ position: "absolute", top: "50%" }}>
+            <Spinner variant="yellow" animation="grow" />
+            <Spinner className="mx-5" variant="yellow" animation="grow" />
+            <Spinner variant="yellow" animation="grow" />
           </Row>
         </>
       ) : products.length !== 0 ? (
